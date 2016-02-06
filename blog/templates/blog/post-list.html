@@ -4,20 +4,16 @@
         </head>
         <body>
             <div>
-                <h1><a href="">Мой джанго блог</a></h1>
+                <h1><a href="/">Мой джанго блог</a></h1>
             </div>
 
-            <div>
-                <p>published: 06.02.2016, 12:14</p>
-                <h2><a href="">Это мой первый пост</a></h2>
-                <p>Божечки мои, я прям как программист.</p>
+            {% for post in posts %}
+            	<div>
+            		<p>published: {{ post.published_date }}</p>
+            		<h1><a href="">{{ post.title }}</a><h1>
+            		<p>{{ post.text|linebreaks }}</p>
             </div>
-
-            <div>
-                <p>published: 06.02.2016, 15:06</p>
-                <h2><a href="">Это мой второй пост</a></h2>
-                <p>Блин, никто не поверит</p>
-            </div>
+            {% endfor %}
         </body>
     </html>
 
